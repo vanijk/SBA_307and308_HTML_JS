@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/sign-in.css">
+   <style>
+    .fa-facebook-f:before,
+    .fa-facebook:before {
+        content: "";
+    }
+    </style>
+    <script src="Sign-in-validation.js"></script>
+
+    </head>
+<body>
+
+<div class="container_signup_signin" id="container_signup_signin">
+    <div class="form-container sign-up-container">
+        <form name="sign-up-form" action="#" >
+
+          <h3>Register a New Account</h3>
+          <input type="email" id="email-su" placeholder="Email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,3}$">
+          <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
+
+          <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+
+         <!-- <input type="email" placeholder="example@domain.com" spellcheck="false" required pattern="(?![_.-])((?![_.-][_.-])[a-zA-Z\d_.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}">
+          <input name="sign-up-email" type="email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+.\[a-z]{2,}$" required/>
+          <input name="sign-up-passwd" type="password" placeholder="Password" required/>
+          <input name="sign-up-passwd" type="password" placeholder="Confirm Password" required/> -->
+          <input name="sign-up-fname" type="text" placeholder="First Name" pattern="[a-zA-Z]{2,64}" required/>
+          <input name="sign-up-lname" type="text" placeholder="Last Name"  pattern="[a-zA-Z]{2,64}" required/>
+           <!--<input type="checkbox" id="cond" name="cond" >
+          <label for="cond">I have read and agree to the
+          Terms & Conditions and Private Policy
+          and aknowledge that
+          I am at leat 16 years of age.</label>-->
+
+            <button>Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form name="sign-in-form" style="" action="home.html" >
+            <h1>Sign in</h1>
+           <!-- <div class="social-container">
+                <a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social" style="color: var(--theme-title);"><i
+                        class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>-->
+          <input type="email" id="email" name="si-email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,3}$">
+          <input type="password" id="pwd" name="pwd"  placeholder="Password" pattern=".{8,}" title="Eight or more characters" required>
+          <a href="#">Forgot your password?</a>
+          <button>Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h4>Why Register for a Cinemark Account?</h4>
+                <h4>Save your Tickets & Orders</h4>
+                <h4>Earn & Redeem Rewards</h4>
+                <h4>Save Payment Cards</h4>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h3> Don't have an account?</h3>
+                <p>Register and book your tickets now!!!</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container_signup_signin');
+
+    signUpButton.addEventListener('click', () => {
+container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+container.classList.remove("right-panel-active");
+});
+
+</script>
+
+
+</body>
+</html>
